@@ -1,0 +1,21 @@
+{
+    "name": "selrahcd/parallel-with-db",
+    "description": "A demo of running tests in parallel with a database",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "brianium/paratest": "^6.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Selrahcd\\ParallelWithDb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SelrahcD",
+            "email": "c.desneuf@gmail.com"
+        }
+    ],
+    "require": {}
+}
