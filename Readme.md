@@ -2,10 +2,12 @@
 
 This is a simple demo project to show how to run tests in parallel with tests using a database.
 
+> **Warning**
+> This is demo code. Its purpose is to demonstrate the ideas and is not what I would call production worthy code.
+
 ## The problem
 
 A database is a shared resource used for multiple tests. Good practices of cleaning the database state after each test prevent from having interdependent tests when tests are run sequentially. Unfortunately, when tests are run in parallel, these good practices are not enough because some actions made for one test in one process might conflict at the database level with actions made for another test in another process. This leads to flaky tests - tests that sometimes pass and sometimes don't. Having flaky tests in a test suite decreases the value of the test suite as it lowers our confidence (Is this test failing for a problem or just because it's colliding with another test ?) and slows us down as you have to repeatedly run the test suites to see if the outcome differs each time.
-
 
 ### Experiment
 
@@ -23,7 +25,7 @@ If you want to run the examples, you'll first need to install the dependencies u
 
 #### No problem in sequence
 
- Run the tests sequentially using PhpUnit, with `./vendor/bin/phpunit`. You'll see that the tests are running without any issues.
+Run the tests sequentially using PhpUnit, with `./vendor/bin/phpunit`. You'll see that the tests are running without any issues.
 
 #### Problem in parallel.
 
@@ -68,4 +70,3 @@ We've also added a [bootstrap file](./bootstrap.php) which is executed before te
 And now, each process gets its own database. Thanks to the logic in the bootstrap file, if the number of processes is different from machine to machine, the correct amount of databases is created[^2].
 
 [^2]: Actually, one extra database is created because the first bootstrap is not in a Paratest test process. Not dealing with that case is interesting as it allows us to keep the same logic when tests are run with PhpUnit.
-
