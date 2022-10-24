@@ -9,6 +9,8 @@ A database is a shared resource used for multiple tests. Good practices of clean
 
 ### Experiment
 
+If you want to follow along, checkout the [`conflicting-tests` branch](https://github.com/SelrahcD/parallel-with-db/tree/conflicting-tests).
+
 This demo project contains a simple failing case: we want to store ponies inside a `ponies` table, but their names have to be unique. To make things simpler, there is no business logic, and all the code is in [the test](./tests/PonyRepositoryTest.php). The test inserts a new pony in the table and then counts that we have one pony that goes by that name. Also, after each test, the `ponies` table is emptied, which is a mandatory step for tests to be able to run sequentially.
 
 A test with the same pony name is repeated in [another file](./tests/PonyRepository2Test.php) to allow us to see the issue when they are run in parallel.
@@ -21,7 +23,7 @@ If you want to run the examples, you'll first need to install the dependencies u
 
 #### No problem in sequence
 
-First, checkout the [`conflicting-tests` branch](https://github.com/SelrahcD/parallel-with-db/tree/conflicting-tests) and run the tests sequentially using PhpUnit, with `./vendor/bin/phpunit`. You'll see that the tests are running without any issues.
+Run the tests sequentially using PhpUnit, with `./vendor/bin/phpunit`. You'll see that the tests are running without any issues.
 
 #### Problem in parallel.
 
