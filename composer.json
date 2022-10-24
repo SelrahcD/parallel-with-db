@@ -11,6 +11,11 @@
             "Selrahcd\\ParallelWithDb\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\SelrahcD\\ParallelWithDb\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "SelrahcD",

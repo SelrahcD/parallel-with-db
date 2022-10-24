@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS ponies;
+
+CREATE TABLE IF NOT EXISTS ponies (
+     id serial PRIMARY KEY,
+     name VARCHAR ( 50 ) UNIQUE NOT NULL
+);
