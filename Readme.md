@@ -21,7 +21,7 @@ If you want to run the examples, you'll first need to install the dependencies u
 
 #### No problem in sequence
 
-First, checkout the `conflicting-tests` branch and run the tests sequentially using PhpUnit, with `./vendor/bin/phpunit`. You'll see that the tests are running without any issues.
+First, checkout the [`conflicting-tests` branch](https://github.com/SelrahcD/parallel-with-db/tree/conflicting-tests) and run the tests sequentially using PhpUnit, with `./vendor/bin/phpunit`. You'll see that the tests are running without any issues.
 
 #### Problem in parallel.
 
@@ -47,7 +47,7 @@ Do we need to use a different database for every test?
 
 Of course not! We've seen that the problem occurs only for tests running in parallel and that tests running sequentially are working perfectly fine, which means we only need a different database for each test running process.
 
-Now, move to the `create-database-for-process` branch and run the tests in parallel with `/vendor/bin/paratest`.
+Now, move to the [`main` branch](https://github.com/SelrahcD/parallel-with-db/) again and run the tests in parallel with `/vendor/bin/paratest`.
 
 Tests do not fail anymore!
 
