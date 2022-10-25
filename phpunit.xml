@@ -11,6 +11,7 @@
 
     <extensions>
         <extension class="Tests\SelrahcD\ParallelWithDb\Tools\RunMigrationBeforeFirstTest"/>
+        <extension class="Tests\SelrahcD\ParallelWithDb\Tools\RunTestInTransaction"/>
     </extensions>
 
 </phpunit>

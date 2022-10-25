@@ -13,7 +13,7 @@ final class RunMigrationBeforeFirstTest implements BeforeFirstTestHook
     {
         echo "Create database schema" . PHP_EOL;
 
-        (new DatabaseConnection())->exec(file_get_contents(__DIR__ . '/schema.sql'));
+        (DatabaseConnection::getInstance())->exec(file_get_contents(__DIR__ . '/schema.sql'));
 
         echo "Database schema created" . PHP_EOL;
     }

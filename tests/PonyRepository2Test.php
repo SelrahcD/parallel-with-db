@@ -11,7 +11,7 @@ class PonyRepository2Test extends TestCase
 {
     protected function tearDown(): void
     {
-        $connection = new DatabaseConnection();
+        $connection = DatabaseConnection::getInstance();
 
         echo "Clean ponies table" . PHP_EOL;
         $connection->query("DELETE FROM ponies");
@@ -23,7 +23,7 @@ class PonyRepository2Test extends TestCase
     */
     public function stores_a_pony_with_same_name_as_in_other_test_file(): void {
 
-        $connection = new DatabaseConnection();
+        $connection = DatabaseConnection::getInstance();
 
         $connection->query("INSERT INTO ponies (name) VALUES ('Spirit')");
 
